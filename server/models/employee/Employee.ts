@@ -1,11 +1,11 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../db"; // ใช้ db.ts ที่คุณทำไว้
+import dbInstance from "../../db"; // ใช้ db.ts ที่คุณทำไว้
 
-const Employee = sequelize.define(
+const Employee = dbInstance.define(
   "Employee",
   {
     code: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -116,7 +116,7 @@ const Employee = sequelize.define(
   },
   {
     tableName: "employee",
-    timestamps: false,
+    timestamps: false, // ปิด timestamps ให้เหมือนกับตารางอื่น
   }
 );
 

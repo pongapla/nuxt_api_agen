@@ -1,5 +1,5 @@
 // server/services/employee.service.ts
-import Employee from "../models/Employee";
+import Employee from "../../models/employee/Employee";
 
 export class EmployeeService {
   async getAllEmployees() {

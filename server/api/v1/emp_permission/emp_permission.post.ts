@@ -1,4 +1,4 @@
-import { EmpPermissionService } from "~/server/services/emp_permission.service";
+import { EmpPermissionService } from "~/server/services/employee/empPermission.service";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);

@@ -1,4 +1,5 @@
-import { EmpPermissionService } from "~/server/services/emp_permission.service";
+import { EmployeeService } from "./../../../services/employee/employee.service";
+import { EmpPermissionService } from "~/server/services/EmployeeService/empPermission.service";
 
 export default defineEventHandler(async (event) => {
   const code = Number(getQuery(event).code); // /api/v1/emp/emp_permission?code=1

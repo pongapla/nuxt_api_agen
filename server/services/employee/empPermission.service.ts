@@ -1,5 +1,5 @@
 // server/services/emp_permission.service.ts
-import EmpPermission from "../models/EmpPermission";
+import EmpPermission from "../../models/employee/EmpPermission";
 
 export class EmpPermissionService {
   async getAllPermissions() {

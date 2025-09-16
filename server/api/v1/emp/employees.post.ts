@@ -1,4 +1,4 @@
-import { EmployeeService } from "~/server/services/employee.service";
+import { EmployeeService } from "~/server/services/employee/employee.service";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
