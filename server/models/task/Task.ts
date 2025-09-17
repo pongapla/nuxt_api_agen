@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import dbInstance from "../db";
+import dbInstance from "../../db";
 
 const Task = dbInstance.define(
   "Task",

@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import dbInstance from "../db";
+import dbInstance from "../../db";
 import Task from "./task";
 
 const TaskPermission = dbInstance.define(
