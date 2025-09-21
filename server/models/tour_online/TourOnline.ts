@@ -1,0 +1,102 @@
+import { DataTypes } from "sequelize";
+import dbInstance from "../../db";
+
+const TourOnline = dbInstance.define(
+  "TourOnline",
+  {
+    code: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    tour_code: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    country_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    zone_code: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    description: { type: DataTypes.TEXT, allowNull: true },
+    keywords: { type: DataTypes.TEXT, allowNull: true },
+    rateinclude: { type: DataTypes.TEXT, allowNull: true },
+    rateexclude: { type: DataTypes.TEXT, allowNull: true },
+    policy: { type: DataTypes.TEXT, allowNull: true },
+    policy_cancel: { type: DataTypes.TEXT, allowNull: true },
+    enable: {
+      type: DataTypes.ENUM("Y", "N"),
+      allowNull: true,
+      defaultValue: "Y",
+    },
+    tourcode: { type: DataTypes.STRING(255), allowNull: false },
+    name: { type: DataTypes.STRING(255), allowNull: false },
+    periodtime: { type: DataTypes.STRING(255), allowNull: false },
+    start_date: { type: DataTypes.STRING(255), allowNull: false },
+    end_date: { type: DataTypes.STRING(255), allowNull: false },
+    n_hotel: { type: DataTypes.STRING(255), allowNull: false },
+    n_bag_weight: { type: DataTypes.STRING(255), allowNull: false },
+    n_currency: { type: DataTypes.STRING(255), allowNull: false },
+    currency_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    n_saveprice: { type: DataTypes.STRING(255), allowNull: false },
+    n_oriprice: { type: DataTypes.STRING(255), allowNull: false },
+    n_newprice: { type: DataTypes.STRING(255), allowNull: false },
+    c_newprice: { type: DataTypes.DECIMAL(10, 2), allowNull: false },
+    countryname: { type: DataTypes.STRING(255), allowNull: false },
+    shortcontent: { type: DataTypes.TEXT, allowNull: false },
+    wsname: { type: DataTypes.STRING(255), allowNull: false },
+    wholesale_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    hot_status: {
+      type: DataTypes.ENUM("Y", "N"),
+      allowNull: false,
+      defaultValue: "N",
+    },
+    other_status: { type: DataTypes.STRING(10), allowNull: false },
+    start_date_sale: { type: DataTypes.DATEONLY, allowNull: true },
+    last_date: { type: DataTypes.DATEONLY, allowNull: true },
+    end_date_sale: { type: DataTypes.DATEONLY, allowNull: false },
+    view: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 1 },
+    enable_api: {
+      type: DataTypes.ENUM("Y", "N"),
+      allowNull: false,
+      defaultValue: "Y",
+    },
+    filepdf: { type: DataTypes.STRING(255), allowNull: true },
+    filebanner: { type: DataTypes.STRING(255), allowNull: true },
+    airlinename: { type: DataTypes.STRING(255), allowNull: true },
+    airline_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    wscode_tour: { type: DataTypes.STRING(255), allowNull: true },
+    pdf_status: {
+      type: DataTypes.ENUM("Y", "N"),
+      allowNull: false,
+      defaultValue: "N",
+    },
+    landmark: { type: DataTypes.STRING(255), allowNull: true },
+    user_create: { type: DataTypes.STRING(100), allowNull: false },
+    user_update: { type: DataTypes.STRING(255), allowNull: false },
+    date_create: { type: DataTypes.DATE, allowNull: true },
+    date_update: { type: DataTypes.DATE, allowNull: true },
+    credit_pro: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    other_tour: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    newbanner: { type: DataTypes.STRING(255), allowNull: true },
+    faimaistatus: {
+      type: DataTypes.ENUM("Y", "N"),
+      allowNull: false,
+      defaultValue: "N",
+    },
+    discount: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
+    soldout: { type: DataTypes.STRING(50), allowNull: false },
+  },
+  {
+    tableName: "tour_online",
+    timestamps: false,
+  }
+);
+
+export default TourOnline;

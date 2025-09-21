@@ -1,11 +1,11 @@
-import Task from "../../models/task/Task";
+import Task from "~/server/models/task/Task";
 
 export class TaskService {
-  async findAll() {
+  async getAll() {
     return await Task.findAll();
   }
 
-  async findById(code: number) {
+  async getById(code: number) {
     return await Task.findByPk(code);
   }
 
@@ -14,15 +14,15 @@ export class TaskService {
   }
 
   async update(code: number, data: any) {
-    const task = await Task.findByPk(code);
-    if (!task) return null;
-    return await task.update(data);
+    const rec = await Task.findByPk(code);
+    if (!rec) throw new Error("Record not found");
+    return await rec.update(data);
   }
 
   async delete(code: number) {
-    const task = await Task.findByPk(code);
-    if (!task) return null;
-    await task.destroy();
-    return true;
+    const rec = await Task.findByPk(code);
+    if (!rec) throw new Error("Record not found");
+    await rec.destroy();
+    return { message: "Deleted successfully" };
   }
 }

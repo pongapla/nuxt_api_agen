@@ -115,7 +115,7 @@ const Employee = dbInstance.define(
     },
   },
   {
-    tableName: "employee",
+    tableName: "employees",
     timestamps: false, // ปิด timestamps ให้เหมือนกับตารางอื่น
   }
 );
